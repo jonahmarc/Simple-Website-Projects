@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>Activity 3 | Sanorias </title>
+
+            <!--  -------------------------------------to get the compiled CSS and JavaScript---------------------------- -->
+
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            
+            <!-- ------------------------------------------------------------------------------------------------------------ -->
+            
+            <!-- Sanorias, Irish Pearl B. -->
+
+            <style>
+                body {
+                    background-image: url(https://wallpaperaccess.com/full/979465.gif);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                .math { 
+                    background-color: skyblue;
+
+                    width: 500px;
+                    
+                    border-radius:10px;
+                    padding: 1px; 
+                    padding-left: 20px; 
+                    padding-bottom:20px;
+                    margin: auto;
+                    margin-top: 9px;
+
+                    opacity: 0.90;
+                }
+
+                .math p {
+                    font-family: monospace;
+                    justify-content: space-between;
+                    font-size: 25px;
+                }
+
+                .math .desc {
+                    font-size: 16px;
+                }
+
+                button {
+                    background-color: yellow;
+                    cursor: pointer;
+                    border-radius: 10px;
+                    outline: 0;
+                }
+
+                .creator button{
+                    background-color: steelblue;
+                }
+                
+                hr {
+                    width: 480px;
+                    margin-left: -1px;
+                }
+
+                .btn-container {
+
+                }
+
+                .row {
+                    padding-bottom: 5px;
+                }
+
+                .flex-parent {
+                    display: flex;
+                }
+
+                .jc-center {
+                    justify-content: center;
+                }
+
+            </style>
+        </head>
+
+        <body>
+            <div class="math">
+                <div class="flex-parent jc-center" style="padding-bottom: 30px; padding-top: 50px;">
+                    <p><strong>MINI CALCULATOR</strong></p>
+                </div>
+                
+                <!-- -------------  INPUTS  ----------------- -->
+                <div class="flex-parent jc-center">
+
+                    <div class="row" style="padding-left: 50px;">
+
+                        <div class="col-5">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="input1">INPUT 1</span>
+                                </div>
+                                <input type="text" class="form-control" id="input_1" placeholder="" aria-describedby="input1" required>
+                                <div class="invalid-feedback">
+                                    Please enter an input.
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-5">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="input2">INPUT 2</span>
+                                </div>
+                                <input type="text" class="form-control" id="input_2" placeholder="" aria-describedby="input2" required>
+                                <div class="invalid-feedback">
+                                    Please enter an input.
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="row">
+                    
+                    <!-- -------------  RESULTS  ----------------- -->
+                    <div class="col">
+                        <div class="flex-parent jc-center">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="res"><strong>RESULTS:</strong></label>
+                                    <input type="" class="form-control" id="res" placeholder="" style="width: 130px; height: 100px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- -------------  BUTTONS  ----------------- -->
+                    <div class="col">
+                        <div class="flex-parent jc-center">
+
+                            <div class="row">
+                                <button type="button" id="add" onclick="reply_click(this.id)" style="margin-right: 50px;">ADD</button>
+                                <p id="mul" style="display:none; font-size: 15px;"></p>
+                            </div> 
+        
+                        </div>
+        
+                        <div class="flex-parent jc-center">
+        
+                            <div class="row">
+                                <button type="button" id="sub" onclick="reply_click(this.id)" style="margin-right: 50px;">SUBTRACT</button>
+                                <p id="div" style="display:none; font-size: 15px;"></p>
+                            </div>
+        
+                        </div>
+        
+                        <div class="flex-parent jc-center">
+        
+                            <div class="row">
+                                <button type="button" id="mul" onclick="reply_click(this.id)" style="margin-right: 50px;">MULTIPLY</button>
+                                <p id="add" style="display:none; font-size: 15px;"></p>
+                            </div>
+        
+                        </div>
+        
+                        <div class="flex-parent jc-center">
+        
+                            <div class="row">
+                                <button type="button" id="div" onclick="reply_click(this.id)" style="margin-right: 50px;">DIVIDE</button>
+                                <p id="sub" style="display:none; font-size: 15px;"></p>
+                            </div>
+        
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- -------------  RESET BTN  ----------------- -->
+                <div class="row" style="padding-top: 30px;">
+                    <div class="col">
+                        <div class="flex-parent jc-center">
+                            <button type="button" id="reset" onclick="reply_click(this.id)" class="btn btn-danger">RESET</button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- -------------  CREATOR INFO BTN  ----------------- -->
+                <div class="creator">
+                    <button type="button" onclick="document.getElementById('irish').style.display='block';">CREATOR</button>
+                    <p id="irish" style="display:none; font-size: 15px;"></p>
+                </div>
+            </div>
+
+
+            <script>
+                
+                function reply_click(clicked_id)
+                {
+                    var id = clicked_id;
+                    
+                    var input1=0, input2=0;
+                    input1 = document.getElementById("input_1").value;
+                    input2 = document.getElementById("input_2").value;
+
+                    switch(id){
+
+                                        // <!-- -------------  THE EQUATION IS TO AVOID CONCATENATION OF INPUTS  ----------------- -->
+                        case "add":
+                                    res = +input1 + +input2;
+                            break;
+
+                        case "sub":
+                                    res = +input1 - +input2;
+                            break;
+
+                        case "mul":
+                                    res = +input1 * +input2;
+                            break;
+
+                        case "div":
+                                    res = +input1 / +input2;
+                            break;
+
+                        case "reset":
+                                    document.getElementById("input_1").value = "";
+                                    document.getElementById("input_2").value = "";
+                                    document.getElementById("irish").innerHTML = "";
+                                    res = ""
+                            break;
+                    }
+
+                    document.getElementById("res").value = res;
+
+                }
+
+                // display creator information
+                var i = "Irish ft. Jonah"
+                document.getElementById("irish").innerHTML = "This is made by " + i + ".";
+
+            </script>
+
+        </body>
+    </html>
